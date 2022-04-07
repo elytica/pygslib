@@ -51,7 +51,8 @@ if __name__ == '__main__':
                                 'for_code/kt3d/gslib/ktsol.f90',
                                 'for_code/kt3d/gslib/sortem.f90',
                                 'for_code/kt3d/gslib/srchsupr.f90'],
-                                f2py_options=[ 'only:', 'pykt3d', 'set_unest',  ':'])
+                                f2py_options=[ 'only:', 'pykt3d', 'set_unest',  ':'],
+			        extra_f90_compile_args=['-std=legacy'])
 
     gslib_postik = Extension(name = 'pygslib.gslib.__gslib__postik',
                      sources = ['for_code/postik/postik.f90',
@@ -59,7 +60,8 @@ if __name__ == '__main__':
                                 'for_code/postik/gslib/locate.f90',
                                 'for_code/postik/gslib/powint.f90',
                                 'for_code/postik/gslib/sortem.f90'],
-                                f2py_options=[ 'only:', 'postik', 'set_unest', 'get_unest',  ':'])
+                                f2py_options=[ 'only:', 'postik', 'set_unest', 'get_unest',  ':'],
+			        extra_f90_compile_args=['-std=legacy'])
 
 
     # this is the gslib code too modified
@@ -67,10 +69,13 @@ if __name__ == '__main__':
     #-----------------------------------------------------
     gslib_rotscale = Extension(name = 'pygslib.gslib.__rotscale',
                      sources = ['for_code/rotscale.f90'],
-								extra_link_args= ['-static'] )
+		     extra_link_args= ['-static-libstdc++'],
+	             extra_f90_compile_args=['-std=legacy'])
+
 
     gslib_block_covariance = Extension(name = 'pygslib.gslib.__block_covariance',
-                     sources = ['for_code/block_covariance.f90'] )
+                     sources = ['for_code/block_covariance.f90'],
+	             extra_f90_compile_args=['-std=legacy'])
 
     gslib_read_gslib = Extension(name = 'pygslib.gslib.__read_gslib',
                      sources = ['for_code/read_gslib.f90'] )
