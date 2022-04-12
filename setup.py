@@ -155,7 +155,7 @@ if __name__ == '__main__':
                  progress,
 				 surpac]
 
-    extensions = cythonize(extensions, gdb_debug=True)
+    extensions = cythonize(extensions, compiler_directives={'language_level' : "3"}, gdb_debug=True)
 
     setup(name=name,
           version=version,
