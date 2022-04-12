@@ -365,8 +365,6 @@ cpdef __dsmincurb( float len12,
     dn = 0.5*len12*(sin(i1)*cos(a1)+sin(i2)*cos(a2))*rf
     de = 0.5*len12*(sin(i1)*sin(a1)+sin(i2)*sin(a2))*rf
 
-    #print dz, dn, de, i1,a1,i2,a2,dl,rf
-
     return dz,dn,de
 
 
@@ -2280,10 +2278,6 @@ cdef class Drillhole:
                     yet[jt] = y+float(yet[jt])
                     zet[jt] = z-float(zet[jt])
 
-                    #print jt, xbt[jt],ybt[jt],zbt[jt]
-                    #print jt, xmt[jt],ymt[jt],zmt[jt]
-                    #print jt, xet[jt],yet[jt],zet[jt]
-
                     # update for next interval
                     x = xet[jt]
                     y = yet[jt]
@@ -3444,7 +3438,7 @@ cdef class Drillhole:
         """
 
 
-        print 'we are working on that'
+        print('This function is not implemented yet.')
 
 
     #-------------------------------------------------------------------
